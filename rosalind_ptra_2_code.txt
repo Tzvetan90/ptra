@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jul 12 11:14:54 2015
+
+@author: Stefano
+"""
+
+from Bio.Seq import translate
+tableindex=[1,2,3,4,5,6,9,10,11,12,13,14,15]
+coding_dna =raw_input('Copy DNA seq here: ')
+coded_dna =raw_input('Copy protein seq here: ')+'*'
+with open('outputptra.txt','w') as out:
+    for index in tableindex:
+        if coded_dna==translate(coding_dna,table=index):
+            out.write(str(index))
+            break
